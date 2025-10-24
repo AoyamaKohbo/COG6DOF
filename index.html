@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html lang="ja">
+
+  <head>
+    <script type="text/x-mathjax-config">
+
+       MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"}}});
+
+    </script>
+
+    <script type="text/javascript" async 
+
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+
+    </script>
+
+  </head>
+
+  <body>
+    <h3>鉛直3自由度運動</h3>
+
+    <h3>§6自由度系での剛体の重心座標</h3>
+
+    <img src="DispVert3DOF.jpg" width=400px>
+
+    <p>3次元空間座標\(P_1:(2d_V/3,0,z_1)\)、\(P_2:(-d_V/3,-l_V,z_2)\)、\(P_3:(-d_V/3,l_V,z_3)\)を通る平面の方程式は次式となります。</p>
+
+    \begin{align}
+      (-\frac{z_1}{d}+\frac{z_2}{2d}+\frac{z_3}{2d})x+(\frac{z_2}{2l}-\frac{z_3}{2l})y+z=\frac{1}{3}z_1+\frac{1}{3}z_2+\frac{1}{3}z_3\label{eq:PlaneZ}
+    \end{align}
+    
+    <p>平面\eqref{eq:PlaneZ}の法線ベクトル\(\mathbf{n}_Z\)は次式となります。</p>
+    \begin{align}
+      \mathbf{n}_Z=\left[
+        \begin{array}{@{\,}c}
+        \displaystyle-\frac{z_1}{d_V}+\frac{z_2}{2d_V}+\frac{z_3}{2d_V}\\
+        \displaystyle\frac{z_2}{2l_V}-\frac{z_3}{2l_V}\\
+        1
+        \end{array}
+      \right]\label{eq:NormVec}
+    \end{align}
+
+    <p>平板の重心の座標を\(G:(x_G,y_G,z_G)\)とします。
+      平面方程式\eqref{eq:PlaneZ}に\(x=x_G\)、\(y=y_G\)を代入すると\(z_G\)が求まります。</p>
+    \begin{equation}
+      z_G=\frac{1}{3}z_1+\frac{1}{3}z_2+\frac{1}{3}z_3+(z_1-\frac{z_2}{2}-\frac{z_3}{2})\frac{x_G}{d_V}+(-\frac{z_2}{2}+\frac{z_3}{2})\frac{y_G}{l_V}
+    \end{equation}
+
+    <p>単位ベクトル\([0~~0~~1]^T\)を法線ベクトルとする平面をx軸まわり、y軸まわりに
+      それぞれ微小角\(\theta_X\)、\(\theta_Y\)で傾斜すると、
+      その法線ベクトルは\([\theta_Y~~-\theta_X~~1]^T\)になります。
+      平面方程式\eqref{eq:PlaneZ}の法線ベクトル\eqref{eq:NormVec}と比較して
+      \(\theta_X\)、\(\theta_Y\)は次式となります。</p>
+    \begin{eqnarray}
+      \theta_X&=&-\frac{z_2}{2l_V}+\frac{z_3}{2l_V}\nonumber\\
+      \theta_Y&=&-\frac{z_1}{d_V}+\frac{z_2}{2d_V}+\frac{z_3}{2d_V}\nonumber
+    \end{eqnarray}
+
+    <p>ここで、</p>
+    \begin{equation}
+      z=\frac{1}{3}z_1+\frac{1}{3}z_2+\frac{1}{3}z_3
+    \end{equation}
+    <p>とすると、\(z\)はz軸と平面\eqref{eq:PlaneZ}の交点座標となります。</p>
+
+    <p>したがって、\(z_G\)は次式となります。</p>
+    \begin{equation}
+      z_G=z+y_G\theta_X-x_G\theta_Y
+    \end{equation}
+
+    <p>点\(P_4:(x_4,l_H,0)\)と点\(P_5:(x_5,-l_H,0)\)を通り、平面\(A_Z\)に直角な平面\(A_X\)の方程式は次式となります。</p>
+    \begin{align}
+      x-(\frac{x_4}{2l_H}-\frac{x_5}{2l_H})y-\theta_Yz=\frac{1}{2}x_4+\frac{1}{2}x_5\label{eq:PlaneX}
+    \end{align}
+
+    <p>平面\eqref{eq:PlaneX}の法線ベクトル\(\mathbf{n}_X\)は次式となります。</p>
+    \begin{align}
+      \mathbf{n}_X=\left[
+        \begin{array}{@{\,}c}
+        1\\
+        \displaystyle\frac{-x_4}{2l_H}+\frac{x_5}{2l_H}\\
+        -\theta_Y
+        \end{array}
+      \right]\label{eq:NormVecX}
+    \end{align}
+
+    <p>単位ベクトル\([1~~0~~0]^T\)を法線ベクトルとする平面をy軸まわり、z軸まわりに
+      それぞれ微小角\(\theta_Y\)、\(\theta_Z\)で傾斜すると、
+      その法線ベクトルは\([1~~\theta_Z~~-\theta_Y]^T\)になります。
+      平面方程式\eqref{eq:PlaneX}の法線ベクトル\eqref{eq:NormVecX}と比較して
+      \(\theta_Z\)は次式となります。</p>
+    \begin{align}
+      \theta_Z=\frac{-x_4}{2l_H}+\frac{x_5}{2l_H}
+    \end{align}
+
+    <p>平面方程式\eqref{eq:PlaneX}に\(y=y_G\)、\(z=z_G\)を代入すると\(z_G\)が求まります。</p>
+    \begin{equation}
+      x_G=\frac{1}{2}x_4+\frac{1}{2}x_5-\theta_Zy_G+\theta_Yz_G
+    \end{equation}
+
+    <p>ここで、</p>
+    \begin{equation}
+      x=\frac{1}{2}x_4+\frac{1}{3}y_5
+    \end{equation}
+    <p>とすると、\(x\)はx軸と平面\eqref{eq:PlaneX}の交点座標となります。</p>
+
+    <p>したがって、\(x_G\)は次式となります。</p>
+    \begin{equation}
+      x_G=x+z_G\theta_Y-y_G\theta_z
+    \end{equation}
+
+    <p>点\(P_6:(d_H,y_6,0)\)を通り、平面\(A_Z\)と平面\(A_X\)に直角な平面\(A_Y\)の方程式は次式となります。</p>
+    \begin{align}
+      -\theta_Z(x-d_H)+y+\theta_Xz=y_6\label{eq:PlaneY}
+    \end{align} 
+
+    <p>平面方程式\eqref{eq:PlaneY}に\(z=z_G\)、\(x=x_G\)を代入すると\(y_G\)が求まります。</p>
+    \begin{equation}
+      y_G=y_6+\theta_Z(x_G-d_H)-\theta_Xz_G
+    \end{equation}
+
+  <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
+</body>
+
+</html>
