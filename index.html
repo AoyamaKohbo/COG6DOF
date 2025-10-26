@@ -65,7 +65,7 @@
 
     <p>したがって、\(z_G\)は次式となります。</p>
     \begin{equation}
-      z_G=z+y_G\theta_X-x_G\theta_Y
+      z_G=z+y_G\theta_X-x_G\theta_Y\label{eq:zG}
     \end{equation}
 
     <p>点\(P_4:(x_4,l_H,0)\)と点\(P_5:(x_5,-l_H,0)\)を通り、平面\(A_Z\)に直角な平面\(A_X\)の方程式は次式となります。</p>
@@ -106,7 +106,7 @@
 
     <p>したがって、\(x_G\)は次式となります。</p>
     \begin{equation}
-      x_G=x+z_G\theta_Y-y_G\theta_z
+      x_G=x+z_G\theta_Y-y_G\theta_z\label{eq:xG}
     \end{equation}
 
     <p>点\(P_6:(d_H,y_6,0)\)を通り、平面\(A_Z\)と平面\(A_X\)に直角な平面\(A_Y\)の方程式は次式となります。</p>
@@ -116,9 +116,25 @@
 
     <p>平面方程式\eqref{eq:PlaneY}に\(z=z_G\)、\(x=x_G\)を代入すると\(y_G\)が求まります。</p>
     \begin{equation}
-      y_G=y_6+\theta_Z(x_G-d_H)-\theta_Xz_G
+      y_G=y+(x_G-d_H)\theta_Z-z_G\theta_X\label{eq:yG}
     \end{equation}
 
+    <p>\(y=y_6\)はy軸と\eqref{eq:PlaneY}の交点座標になります。</p>
+    
+    <p>\eqref{eq:zG}の\(x_G\)と\(y_G\)にそれぞれ\eqref{eq:xG}と\eqref{eq:yG}を代入します。
+      同様に、\eqref{eq:xG}の\(y_G\)と\(z_G\)にそれぞれ\eqref{eq:yG}と\eqref{eq:zG}を代入し、
+      \eqref{eq:yG}の\(z_G\)と\(x_G\)にそれぞれ\eqref{eq:zG}と\eqref{eq:xG}を代入し、
+      \(\theta_X\)、\(\theta_Y\)、\(\theta_Z\)の２次項を省略します。
+    </p>
+    \begin{align}
+      \left.
+        \begin{array}{@{\,}rl}
+          x_G&=x+\theta_Y(z+z_{G0})-\theta_Z(y+y_{G0})\\
+          y_G&=y+\theta_Z(x+x_{G0}-d_H)-\theta_X(z+z_{G0})\\
+          z_G&=z+\theta_X(y+y_{G0})-\theta_Y(x+x_{G0})
+        \end{array}
+      \right\}\label{eq:COG}
+    \end{align}  
   <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
 </body>
 
