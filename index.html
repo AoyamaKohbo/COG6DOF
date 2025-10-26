@@ -18,7 +18,7 @@
   </head>
 
   <body>
-    <h3>鉛直3自由度運動</h3>
+    <h3>6自由度運動</h3>
 
     <h3>§6自由度系での剛体の重心座標</h3>
 
@@ -106,35 +106,61 @@
 
     <p>したがって、\(x_G\)は次式となります。</p>
     \begin{equation}
-      x_G=x+z_G\theta_Y-y_G\theta_z\label{eq:xG}
+      x_G=x+z_G\theta_Y-y_G\theta_Z\label{eq:xG}
     \end{equation}
 
-    <p>点\(P_6:(d_H,y_6,0)\)を通り、平面\(A_Z\)と平面\(A_X\)に直角な平面\(A_Y\)の方程式は次式となります。</p>
+    <p>平面\(A_Z\)と平面\(A_X\)に直角な平面\(A_Y\)の法線ベクトル\(\mathbf{n}_Y\)は次式となります。</p>
+    \begin{align}
+      \mathbf{n}_Y=\left[
+        \begin{array}{@{\,}c}
+        -\theta_Z\\
+        1\\
+        \theta_X
+        \end{array}
+      \right]\label{eq:NormVecY}
+    \end{align}
+
+    <p>点\(P_6:(d_H,y_6,0)\)を通り、ベクトル\(\mathbf{n}_Y\)を法線とする平面\(A_Y\)の方程式は次式となります。</p>
     \begin{align}
       -\theta_Z(x-d_H)+y+\theta_Xz=y_6\label{eq:PlaneY}
     \end{align} 
 
     <p>平面方程式\eqref{eq:PlaneY}に\(z=z_G\)、\(x=x_G\)を代入すると\(y_G\)が求まります。</p>
     \begin{equation}
-      y_G=y+(x_G-d_H)\theta_Z-z_G\theta_X\label{eq:yG}
+      y_G=y+x_G\theta_Z-z_G\theta_X\label{eq:yG}
     \end{equation}
 
-    <p>\(y=y_6\)はy軸と\eqref{eq:PlaneY}の交点座標になります。</p>
+    <p>\(y=y_6-d_H\)はy軸と\eqref{eq:PlaneY}の交点座標になります。</p>
     
-    <p>\eqref{eq:zG}の\(x_G\)と\(y_G\)にそれぞれ\eqref{eq:xG}と\eqref{eq:yG}を代入します。
-      同様に、\eqref{eq:xG}の\(y_G\)と\(z_G\)にそれぞれ\eqref{eq:yG}と\eqref{eq:zG}を代入し、
-      \eqref{eq:yG}の\(z_G\)と\(x_G\)にそれぞれ\eqref{eq:zG}と\eqref{eq:xG}を代入し、
-      \(\theta_X\)、\(\theta_Y\)、\(\theta_Z\)の２次項を省略します。
+    <p>重心のz座標\eqref{eq:zG}の\(x_G\)と\(y_G\)にそれぞれ式\eqref{eq:xG}と\eqref{eq:yG}を代入します。
+      同様に、重心のx座標\eqref{eq:xG}の\(y_G\)と\(z_G\)にそれぞれ式\eqref{eq:yG}と\eqref{eq:zG}を代入し、
+      重心のy座標\eqref{eq:yG}の\(z_G\)と\(x_G\)にそれぞれ式\eqref{eq:zG}と\eqref{eq:xG}を代入し、
+      \(\theta_X\)、\(\theta_Y\)、\(\theta_Z\)の２次項を省略すると、重心座標の近似式を得ます。
     </p>
     \begin{align}
       \left.
         \begin{array}{@{\,}rl}
           x_G&=x+\theta_Y(z+z_{G0})-\theta_Z(y+y_{G0})\\
-          y_G&=y+\theta_Z(x+x_{G0}-d_H)-\theta_X(z+z_{G0})\\
+          y_G&=y+\theta_Z(x+x_{G0})-\theta_X(z+z_{G0})\\
           z_G&=z+\theta_X(y+y_{G0})-\theta_Y(x+x_{G0})
         \end{array}
       \right\}\label{eq:COG}
-    \end{align}  
+    \end{align}
+
+  <p>ここに、\(x\)、\(y\)、\(z\)、\(\theta_X\)、\(\theta_Y\)、\(\theta_Z\)は次式となります。</p>
+    \begin{equation}
+      \left.
+        \begin{array}{@{\,}rl}
+          x=&\displaystyle\frac{1}{2}x_4+\frac{1}{3}y_5\\
+          y=&y_6-d_H\\
+          z=&\displaystyle\frac{1}{3}z_1+\frac{1}{3}z_2+\frac{1}{3}z_3\\
+          \theta_X=&\displaystyle-\frac{z_2}{2l_V}+\frac{z_3}{2l_V}\\
+          \theta_Y=&\displaystyle-\frac{z_1}{d_V}+\frac{z_2}{2d_V}+\frac{z_3}{2d_V}\\
+          \theta_Z=&\displaystyle\frac{-x_4}{2l_H}+\frac{x_5}{2l_H}       
+        \end{array}
+      \right\}
+    \end{equation}    
+    
   <p><a href="https://aoyamakohbo.github.io/Craftlogy/">->TOP</a></p>
 </body>
 
